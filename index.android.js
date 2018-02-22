@@ -7,40 +7,29 @@ import {
   Button
 } from 'react-native';
 
-class MeuComponente extends Component {
-  render() {
-    return (
-      <View>
-        {/* <Text>{this.props.propriedade1}</Text>
-        <Text>{this.props.xyz}</Text>
-        <Text>{this.props.p}</Text> */}
-        <Text>{this.props.teste}</Text>
-      </View>
-    )
-  }
-}
-
 class jokempo extends Component {
 
   constructor(props) {
-    super(props);//passa as propriedades para o Component
+    super(props);
 
-    this.state = { texto: 'Texto teste 2' };
+    this.state = { escolhaUsuario: '' }
   }
 
-  alteraTexto() {
-    this.setState({ texto: 'Outra coisa' });//fun;'ao herdada do Component
+  jokenpo(escolhaUsuario) {
+    // alert(escolhaUsuario);
+    this.setState({ escolhaUsuario: escolhaUsuario });
   }
 
   render() {
     return (
       <View>
-        {/* <MeuComponente propriedade1='Banana' xyz='Abacaxi' p='Uva'></MeuComponente> */}
-        <MeuComponente teste={this.state.texto}></MeuComponente>
-        <Button
-          title='Botão'
-          onPress={() => { this.alteraTexto() }}
-        />
+        <Text>Escolha do computador</Text>
+        <Text>Escolha do usuário: {this.state.escolhaUsuario}</Text>
+        <Text>Resultado</Text>
+        {/* deixa a função jokempo encapsulada para que ela só seja executado quando clicar */}
+        <Button title="pedra" onPress={() => { this.jokenpo('pedra') }} />
+        <Button title="papel" onPress={() => { this.jokenpo('papel') }} />
+        <Button title="tesoura" onPress={() => { this.jokenpo('tesoura') }} />
       </View>
     );
   }
