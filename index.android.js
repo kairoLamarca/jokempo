@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import Topo from './src/components/topo';
+import Icone from './src/components/icone';
 
 class jokempo extends Component {
 
@@ -116,35 +117,6 @@ class jokempo extends Component {
 
       </View>
     );
-  }
-}
-
-class Icone extends Component {
-  render() {
-    if (this.props.escolha == 'pedra') {
-      return (
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-          <Image source={require('./imgs/pedra.png')} />
-        </View>
-      );
-    } else if (this.props.escolha == 'papel') {
-      return (
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-          <Image source={require('./imgs/papel.png')} />
-        </View>
-      );
-    } else if (this.props.escolha == 'tesoura') {
-      return (
-        <View style={styles.icone}>
-          <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-          <Image source={require('./imgs/tesoura.png')} />
-        </View>
-      );
-    } else {
-      return false;
-    }
   }
 }
 
