@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   Button
 } from 'react-native';
 
@@ -12,6 +13,7 @@ class jokempo extends Component {
   constructor(props) {
     super(props);
 
+    //cria os states para utilizar em outras funções
     this.state = {
       escolhaUsuario: '',
       escolhaComputador: '',
@@ -86,6 +88,10 @@ class jokempo extends Component {
   render() {
     return (
       <View>
+        <Topo></Topo>
+        <View></View>
+        <View></View>
+
         <Text>Escolha do computador: {this.state.escolhaComputador}</Text>
         <Text>Escolha do usuário: {this.state.escolhaUsuario}</Text>
         <Text>Resultado: {this.state.resultado}</Text>
@@ -95,6 +101,16 @@ class jokempo extends Component {
         <Button title="tesoura" onPress={() => { this.jokenpo('tesoura') }} />
       </View>
     );
+  }
+}
+
+class Topo extends Component {
+  render() {
+    return (
+      <View>
+        <Image source={require('./imgs/jokenpo.png')} />
+      </View>
+    )
   }
 }
 
