@@ -89,16 +89,26 @@ class jokempo extends Component {
     return (
       <View>
         <Topo></Topo>
-        <View></View>
+        <View style={styles.painelAcoes}>
+          {/* deixa a função jokempo encapsulada para que ela só seja executado quando clicar */}
+
+          <View style={styles.btnEscolha}>
+            <Button title="pedra" onPress={() => { this.jokenpo('pedra') }} />
+          </View>
+          <View style={styles.btnEscolha}>
+            <Button title="papel" onPress={() => { this.jokenpo('papel') }} />
+          </View>
+          <View style={styles.btnEscolha}>
+            <Button title="tesoura" onPress={() => { this.jokenpo('tesoura') }} />
+          </View>
+
+        </View>
         <View></View>
 
         <Text>Escolha do computador: {this.state.escolhaComputador}</Text>
         <Text>Escolha do usuário: {this.state.escolhaUsuario}</Text>
         <Text>Resultado: {this.state.resultado}</Text>
-        {/* deixa a função jokempo encapsulada para que ela só seja executado quando clicar */}
-        <Button title="pedra" onPress={() => { this.jokenpo('pedra') }} />
-        <Button title="papel" onPress={() => { this.jokenpo('papel') }} />
-        <Button title="tesoura" onPress={() => { this.jokenpo('tesoura') }} />
+
       </View>
     );
   }
@@ -113,5 +123,16 @@ class Topo extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  btnEscolha: {
+    width: 90
+  },
+  painelAcoes: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10
+  }
+});
 
 AppRegistry.registerComponent('jokempo', () => jokempo);
