@@ -8,6 +8,8 @@ import {
   Button
 } from 'react-native';
 
+import Topo from './src/components/topo';
+
 class jokempo extends Component {
 
   constructor(props) {
@@ -114,16 +116,6 @@ class jokempo extends Component {
 
       </View>
     );
-  }
-}
-
-class Topo extends Component {
-  render() {
-    return (
-      <View>
-        <Image source={require('./imgs/jokenpo.png')} />
-      </View>
-    )
   }
 }
 
