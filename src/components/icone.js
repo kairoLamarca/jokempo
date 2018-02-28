@@ -1,43 +1,46 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
+const imgPedra = require('../../imgs/pedra.png')
+const imgPapel = require('../../imgs/papel.png')
+const imgTesoura = require('../../imgs/tesoura.png')
+
 class Icone extends Component {
     render() {
-        if (this.props.escolha == 'pedra') {
+        if (this.props.escolha === 'pedra') {
             return (
                 <View style={styles.icone}>
                     <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-                    <Image source={require('../../imgs/pedra.png')} />
+                    <Image source={imgPedra} />
                 </View>
             );
-        } else if (this.props.escolha == 'papel') {
+        } else if (this.props.escolha === 'papel') {
             return (
                 <View style={styles.icone}>
                     <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-                    <Image source={require('../../imgs/papel.png')} />
+                    <Image source={imgPapel} />
                 </View>
             );
-        } else if (this.props.escolha == 'tesoura') {
+        } else if (this.props.escolha === 'tesoura') {
             return (
                 <View style={styles.icone}>
                     <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-                    <Image source={require('../../imgs/tesoura.png')} />
+                    <Image source={imgTesoura} />
                 </View>
             );
-        } else {
-            return false;
         }
+        return false;
     }
 }
 
-const styles = StyleSheet.create({   
+const styles = StyleSheet.create({
     icone: {
-      alignItems: 'center',
-      marginBottom: 20
+        alignItems: 'center',
+        marginBottom: 20
     },
     txtJogador: {
-      fontSize: 18
+        fontSize: 18
     }
-  });
+});
 
 export default Icone;
