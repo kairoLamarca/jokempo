@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-const imgPedra = require('../../imgs/pedra.png')
-const imgPapel = require('../../imgs/papel.png')
-const imgTesoura = require('../../imgs/tesoura.png')
+const imgPedra = require('../../imgs/pedra.png');
+const imgPapel = require('../../imgs/papel.png');
+const imgTesoura = require('../../imgs/tesoura.png');
 
 class Icone extends Component {
     render() {
